@@ -1,0 +1,22 @@
+def start():
+    f = open('file1.txt', 'r')
+    s = f.read()
+    strip1 = s.rstrip()
+    print(strip1)
+    slb1 = strip1.split('\n')
+    f2 = open('file2.txt', 'r')
+    slb1.sort()
+    s2 = f2.read()
+    slb2 = s2.split('\n') 
+    slb2.sort()
+    Set1 = set(slb1)
+    Set2 = set(slb2)      
+    # print(Set1) 
+    print(Set2)
+    r = open('result.txt', 'w')
+    for i in Set1:
+        if i not in Set2:
+            r.write('{0}\n'.format(i))
+    r.close()                
+start()
+print("done")
